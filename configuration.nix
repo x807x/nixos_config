@@ -160,7 +160,7 @@
     packages = with pkgs; [
       discord
 	  brave
-	  jdk17
+	  jdk8
     #  thunderbird
     ];
   };
