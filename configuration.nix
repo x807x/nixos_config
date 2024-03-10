@@ -176,6 +176,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.cudaSupport = true;
 
   # List packages installed in system profile. To search, run:
   environment = {
@@ -203,7 +204,7 @@
 	rustc
 	cargo
     (import ./vim.nix)
-    (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv torch]))
+    (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv ]))
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
             vscodevim.vim
