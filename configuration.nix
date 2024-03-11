@@ -190,7 +190,7 @@
     neofetch
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
-#	cudaPackages.cudnn
+	cudaPackages.cudnn
 	unetbootin
 	glxinfo
 	libgcc
