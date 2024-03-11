@@ -193,6 +193,7 @@
 	cudaPackages.cudnn
 	unetbootin
 	glxinfo
+	glibc
 	libgcc
 	gcc
 	cudaPackages.cuda_nvcc
