@@ -244,6 +244,11 @@
 	  xwayland.enable = true;
   };
 
+  xdg.portal = {
+    enable = true;
+	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
 
   # List services that you want to enable:
 
