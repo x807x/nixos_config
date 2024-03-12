@@ -184,6 +184,8 @@
   environment = {
     sessionVariables = {
       LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+# WLR_NO_HARDWARE_CURSORS = "1";
+	  NIXOS_OZONE_WL = "1";
     };
   };
   # $ nix search wget
@@ -228,6 +230,12 @@
     enable = true;
 	remotePlay.openFirewall = true;
 	dedicatedServer.openFirewall = true;
+  };
+
+  programs.hyprland = {
+	  enable = true;
+      nvidiaPatches = true;
+	  xwayland.enable = true;
   };
 
 
