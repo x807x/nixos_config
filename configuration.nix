@@ -208,6 +208,12 @@
 	wget
 	rustc
 	cargo
+#wayland
+	waybar
+	eww
+	dunst
+	libnotify
+##
     (import ./vim.nix)
     (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv ]))
     (vscode-with-extensions.override {
