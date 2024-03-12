@@ -213,6 +213,17 @@
 	eww
 	dunst
 	libnotify
+#hyprpaper
+#	swaybg
+#	wpaperd
+#	mpvpater
+	swww
+# terminal
+	kitty
+#	alacritty
+#	wezterm
+#
+	rofi-wayland
 ##
     (import ./vim.nix)
     (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv ]))
