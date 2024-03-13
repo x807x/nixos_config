@@ -57,6 +57,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
@@ -95,7 +96,18 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+	naturalScrolling = true;
+	tapping = true;
+	disableWhileTyping = false;
+	horizontalScrolling = true;
+  };
+  services.xserver.modules = [ pkgs.xf86_input_wacom ];
+  services.xserver.wacom.enable = true;
+
+  # Enable touch screen
+
 
   # hotkeys
   services.actkbd = {
