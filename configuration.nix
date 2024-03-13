@@ -87,7 +87,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -183,9 +183,7 @@
   # List packages installed in system profile. To search, run:
   environment = {
     sessionVariables = {
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-# WLR_NO_HARDWARE_CURSORS = "1";
-	  NIXOS_OZONE_WL = "1";
+#LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     };
   };
   # $ nix search wget
@@ -209,7 +207,9 @@
 	rustc
 	cargo
 #wayland
-	waybar
+	(pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
 	eww
 	dunst
 	libnotify
@@ -253,6 +253,11 @@
 	  enable = true;
       enableNvidiaPatches = true;
 	  xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
   };
 
   xdg.portal = {
