@@ -205,7 +205,6 @@
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
 	cudaPackages.cudnn
-	unetbootin
 	glxinfo
 	glibc
 	libgcc
