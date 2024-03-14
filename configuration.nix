@@ -210,6 +210,7 @@
 	libgcc
 	gcc
 	cudaPackages.cuda_nvcc
+	htop-vim
 	git
 	lazygit
 	tree
