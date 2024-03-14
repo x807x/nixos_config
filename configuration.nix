@@ -211,6 +211,7 @@
 	gcc
 	cudaPackages.cuda_nvcc
 	git
+	lazygit
 	tree
     gparted
 	tmux
