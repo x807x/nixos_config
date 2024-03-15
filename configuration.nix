@@ -209,6 +209,7 @@
 	glibc
 	libgcc
 	gcc
+	gdb
 	cudaPackages.cuda_nvcc
 	htop-vim
 	git
