@@ -245,6 +245,7 @@
       vscodeExtensions = with vscode-extensions; [
             vscodevim.vim
 			rust-lang.rust-analyzer
+			johnpapa.vscode-peacock
 			ms-vscode.cpptools
       ];
     })
