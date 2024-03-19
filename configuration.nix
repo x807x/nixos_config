@@ -98,10 +98,12 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
     enable = true;
-	naturalScrolling = true;
-	tapping = true;
-	disableWhileTyping = false;
-	horizontalScrolling = true;
+	touchpad = {
+	  naturalScrolling = true;
+	  tapping = true;
+	  disableWhileTyping = false;
+	  horizontalScrolling = true;
+	};
   };
   services.xserver.modules = [ pkgs.xf86_input_wacom ];
   services.xserver.wacom.enable = true;
@@ -247,6 +249,7 @@
 			rust-lang.rust-analyzer
 			johnpapa.vscode-peacock
 			ms-vscode.cpptools
+			esbenp.prettier-vscode
       ];
     })
   ];
