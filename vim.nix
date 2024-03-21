@@ -76,7 +76,7 @@ inoremap " ""<Esc>i
 inoremap ' '<Esc>i'
 inoremap [ []<Esc>i
 inoremap ( ()<Esc>i
-inoremap {<CR> {<CR><CR>}<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
 nmap <F7> :w<CR> <bar>  :!g++ -o a.out % && ./a.out <CR>
 
 " alias

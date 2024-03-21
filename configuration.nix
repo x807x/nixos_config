@@ -19,6 +19,8 @@
   networking.hostName = "807nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -55,6 +57,7 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
@@ -85,7 +88,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+    jack.enable = true;
 
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
@@ -93,7 +96,20 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.xserver.libinput = {
+    enable = true;
+	touchpad = {
+	  naturalScrolling = true;
+	  tapping = true;
+	  disableWhileTyping = false;
+	  horizontalScrolling = true;
+	};
+  };
+  services.xserver.modules = [ pkgs.xf86_input_wacom ];
+  services.xserver.wacom.enable = true;
+
+  # Enable touch screen
+
 
   # hotkeys
   services.actkbd = {
@@ -160,7 +176,7 @@
     packages = with pkgs; [
       discord
 	  brave
-	  jdk17
+#	  jdk8
     #  thunderbird
     ];
   };
@@ -176,11 +192,12 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.cudaSupport = true;
 
   # List packages installed in system profile. To search, run:
   environment = {
     sessionVariables = {
-      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+#LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     };
   };
   # $ nix search wget
@@ -189,26 +206,55 @@
     neofetch
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
-#	cudaPackages.cudnn
-	unetbootin
+	cudaPackages.cudnn
 	glxinfo
+	glibc
 	libgcc
+	cmake
 	gcc
+	gdb
 	cudaPackages.cuda_nvcc
+	htop-vim
 	git
+	lazygit
 	tree
     gparted
 	tmux
 	wget
 	rustc
 	cargo
+#wayland
+	(pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    }))
+	eww
+	dunst
+	libnotify
+#hyprpaper
+#	swaybg
+#	wpaperd
+#	mpvpater
+	swww
+# terminal
+	kitty
+#	alacritty
+#	wezterm
+#
+	rofi-wayland
+##
     (import ./vim.nix)
-    (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv torch]))
+    (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv ]))
     (vscode-with-extensions.override {
       vscodeExtensions = with vscode-extensions; [
             vscodevim.vim
 			rust-lang.rust-analyzer
+			johnpapa.vscode-peacock
 			ms-vscode.cpptools
+			ms-vscode.makefile-tools
+			ms-vscode.hexeditor
+			ms-vscode-remote.remote-ssh
+			ms-vscode.cmake-tools
+			esbenp.prettier-vscode
       ];
     })
   ];
@@ -224,6 +270,22 @@
     enable = true;
 	remotePlay.openFirewall = true;
 	dedicatedServer.openFirewall = true;
+  };
+
+  programs.hyprland = {
+	  enable = true;
+      enableNvidiaPatches = true;
+	  xwayland.enable = true;
+  };
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
+  xdg.portal = {
+    enable = true;
+	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
 

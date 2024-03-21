@@ -23,13 +23,5 @@ Make sure you have backup your config `/etc/nixos/`.
 Copy these config files to `/etc/nixos`
 
 ```sh
-sudo cp -r * /etc/nixos
+sudo cp ./* /etc/nixos/
 ```
-
-After copying these files you can rebuild your config
-
-```sh
-sudo nixos-rebuild switch
-```
-
-It will finish rebuild in a few seconds.
