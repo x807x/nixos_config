@@ -210,6 +210,7 @@
 	glxinfo
 	glibc
 	libgcc
+	cmake
 	gcc
 	gdb
 	cudaPackages.cuda_nvcc
