@@ -250,6 +250,10 @@
 			rust-lang.rust-analyzer
 			johnpapa.vscode-peacock
 			ms-vscode.cpptools
+			ms-vscode.makefile-tools
+			ms-vscode.hexeditor
+			ms-vscode-remote.remote-ssh
+			ms-vscode.cmake-tools
 			esbenp.prettier-vscode
       ];
     })
