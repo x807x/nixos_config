@@ -211,6 +211,7 @@
 	glibc
 	libgcc
 	cmake
+	gnumake
 	gcc
 	gdb
 	cudaPackages.cuda_nvcc
