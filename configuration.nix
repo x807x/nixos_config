@@ -193,6 +193,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.cudaSupport = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   # List packages installed in system profile. To search, run:
   environment = {
@@ -202,7 +203,7 @@
   };
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	warp
+	warp-terminal
     nano# Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neofetch
 	nvidia-vaapi-driver
