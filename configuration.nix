@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./users/ckeisc807.nix
     ];
 # Bootloader.
   #boot.loader.systemd-boot.enable = true;
@@ -169,6 +170,7 @@
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  /*
   users.users.ckeisc807 = {
     isNormalUser = true;
     description = "ckeisc807";
@@ -180,6 +182,7 @@
     #  thunderbird
     ];
   };
+  */
   users.users.ckefgisc = {
     isNormalUser = true;
     description = "ckefgisc";
