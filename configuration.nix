@@ -134,7 +134,7 @@
   hardware.nvidia = {
     prime = {
 		intelBusId = "PCI:0:2:0";
-		nvidiaBusId = "PCI:23:0:0";
+		nvidiaBusId = "PCI:43:0:0";
 	};
     # Modesetting is required.
     modesetting.enable = true;
@@ -212,6 +212,7 @@
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
 	cudaPackages.cudnn
+	cudaPackages.cuda_nvcc
 	glxinfo
 	glibc
 	libgcc
@@ -219,7 +220,6 @@
 	gnumake
 	gcc
 	gdb
-	cudaPackages.cuda_nvcc
 	htop-vim
 	git
 	lazygit
