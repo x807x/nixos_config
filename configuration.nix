@@ -211,6 +211,7 @@
 	busybox
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
+	cudaPackages.cuda_cudart
 	cudaPackages.cudnn
 	cudaPackages.cuda_nvcc
 	glxinfo
