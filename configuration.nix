@@ -156,7 +156,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = true;
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.
@@ -209,6 +209,7 @@
     nano# Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neofetch
 	busybox
+	gperftools
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
 	cudaPackages.cuda_cudart
