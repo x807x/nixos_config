@@ -253,6 +253,7 @@
       vscodeExtensions = with vscode-extensions; [
             vscodevim.vim
 			rust-lang.rust-analyzer
+			github.copilot
 			johnpapa.vscode-peacock
 			ms-vscode.cpptools
 			ms-vscode.makefile-tools
