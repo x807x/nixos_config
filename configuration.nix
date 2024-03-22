@@ -121,6 +121,12 @@
 
 # nvidiagpu
 #/*
+/*  katago.override = {
+    backend = "cuda";
+	cudnn = cudnn_cudatoolkit_10_2;
+	cudatoolkit = cudatoolkit_10_2;
+	stdev = gccc8Stdev;
+  };*/
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
