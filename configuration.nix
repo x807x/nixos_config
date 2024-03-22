@@ -129,7 +129,7 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-#  services.xserver.videoDrivers = ["nvidiaLegacy470"]; # or "nvidiaLegacy470 etc.
+  services.xserver.videoDrivers = ["nvidia" "intel"]; # or "nvidiaLegacy470 etc.
 
   hardware.nvidia = {
     prime = {
