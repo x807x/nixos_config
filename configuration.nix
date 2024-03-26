@@ -122,7 +122,6 @@
   };
 
 # nvidiagpu
-#/*
 /*  katago.override = {
     backend = "cuda";
 	cudnn = cudnn_cudatoolkit_10_2;
@@ -164,7 +163,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = true;
+    open = false;
 
     # Enable the Nvidia settings menu,
 	# accessible via `nvidia-settings`.
@@ -173,7 +172,6 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
-#*/
 ### endof gpu
 
 
@@ -213,6 +211,11 @@
     };
   };
   # $ nix search wget
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    plasma-browser-integration
+    oxygen
+	kwallet
+  ];
   environment.systemPackages = with pkgs; [
     nano# Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neofetch
@@ -220,7 +223,7 @@
 	busybox
 	lshw
 	gperftools
-	nvidia-vaapi-driver
+#	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
 	cudaPackages.cuda_cudart
 	cudaPackages.cudnn
