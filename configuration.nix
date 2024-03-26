@@ -16,6 +16,7 @@
   boot.loader.grub.devices = [ "nodev" ];
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
 
   networking.hostName = "807nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -39,7 +40,8 @@
     enabled = "fcitx5";
 	fcitx5.addons = with pkgs; [
 	  fcitx5-chewing
-#      fcitx5-chinese-addons
+      fcitx5-gtk
+      fcitx5-chinese-addons
 	];
   };
 
@@ -216,6 +218,7 @@
     neofetch
 	lightdm-mobile-greeter # touch screen
 	busybox
+	lshw
 	gperftools
 	nvidia-vaapi-driver
 	cudaPackages.cudatoolkit
@@ -245,7 +248,7 @@
 	eww
 	dunst
 	libnotify
-#hyprpaper
+	hyprpaper
 #	swaybg
 #	wpaperd
 #	mpvpater
@@ -288,6 +291,7 @@
 	dedicatedServer.openFirewall = true;
   };
 
+#hyprland
   programs.hyprland = {
 	  enable = true;
       enableNvidiaPatches = true;
