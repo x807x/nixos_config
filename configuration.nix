@@ -58,6 +58,19 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # power management for laptop
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+    };
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
