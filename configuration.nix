@@ -43,6 +43,9 @@
 	  fcitx5-chewing
       fcitx5-gtk
       fcitx5-chinese-addons
+#      fcitx5-breeze
+#      fcitx5-configtool
+#      fcitx5-gt
 	];
   };
 
