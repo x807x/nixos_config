@@ -135,6 +135,7 @@
 	];
   };
 
+  hardware.sensor.iio.enable = true;
 # nvidiagpu
 /*  katago.override = {
     backend = "cuda";
