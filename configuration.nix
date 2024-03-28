@@ -283,6 +283,7 @@
     (import ./vim.nix)
     (python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv ]))
     (vscode-with-extensions.override {
+	  vscode = vscodium;
       vscodeExtensions = with vscode-extensions; [
             vscodevim.vim
 			rust-lang.rust-analyzer
@@ -298,6 +299,7 @@
     })
 #*/
   ];
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
