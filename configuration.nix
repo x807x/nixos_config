@@ -231,7 +231,9 @@
 	kwallet
   ];
 
+
   environment.systemPackages = with pkgs; [
+	auto-cpufreq
     nano# Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     neofetch
 	lightdm-mobile-greeter # touch screen
@@ -294,8 +296,8 @@
 			esbenp.prettier-vscode
       ];
     })
+#*/
   ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
