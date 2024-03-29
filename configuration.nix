@@ -50,6 +50,7 @@
 #      fcitx5-gt
 		];
 	};
+	services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
 	i18n.extraLocaleSettings = {
 		LC_ADDRESS = "en_US.UTF-8";
@@ -83,6 +84,7 @@
 # Enable the KDE Plasma Desktop Environment.
 	services.xserver.displayManager.gdm.enable = true;
 	services.xserver.desktopManager.plasma5.enable = true;
+
 
 # GNOME desktop intergration
 	qt = {
