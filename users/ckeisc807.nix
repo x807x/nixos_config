@@ -8,6 +8,7 @@
 		packages = with pkgs; [
 			discord
 			brave
+			google-chrome
 #			vieb
 		];
 	};
