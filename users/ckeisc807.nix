@@ -9,7 +9,11 @@
 			discord
 			brave
 			google-chrome
-#			vieb
+			vieb
+
+# games
+			minesweep-rs
+			minetest
 		];
 	};
 
