@@ -10,7 +10,7 @@
 			brave
 			google-chrome
 			vieb
-
+			qemu
 # games
 			minesweep-rs
 			minetest
