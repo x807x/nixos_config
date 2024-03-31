@@ -267,7 +267,7 @@
 		rofi-wayland
 ##
 		(import ./vim.nix)
-		(python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv ]))
+		(python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv beautifulsoup4 ]))
 		(vscode-with-extensions.override {
 		 vscode = vscodium;
 		 vscodeExtensions = with vscode-extensions; [
