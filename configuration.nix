@@ -247,11 +247,12 @@
 			wget
 			rustc
 			cargo
-#wayland
+#hyprland
 			(pkgs.waybar.overrideAttrs (oldAttrs: {
 										mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
 										}))
 	eww
+		wlogout
 		dunst
 		libnotify
 		hyprpaper
