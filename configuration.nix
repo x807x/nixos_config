@@ -219,7 +219,7 @@
 
 	environment.systemPackages = with pkgs; [
 		vieb
-		auto-cpufreq
+			auto-cpufreq
 			nano# Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 			neofetch
 			lightdm-mobile-greeter # touch screen
@@ -306,6 +306,13 @@
 		enableNvidiaPatches = true;
 		xwayland.enable = true;
 	};
+	programs.sway.enable=true;
+    security.pam.services.swaylock = {};
+	/*
+	security.pam.loginLimits = [
+	{ domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+	];
+	*/
 
 	environment.sessionVariables = {
 		WLR_NO_HARDWARE_CURSORS = "1";
