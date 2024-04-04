@@ -256,6 +256,7 @@
 		dunst
 		libnotify
 		hyprpaper
+		swaylock
 #	swaybg
 #	wpaperd
 #	mpvpater
@@ -306,6 +307,7 @@
 		enableNvidiaPatches = true;
 		xwayland.enable = true;
 	};
+	security.pam.services.swaylock = {};
 	/*
 	security.pam.loginLimits = [
 	{ domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
