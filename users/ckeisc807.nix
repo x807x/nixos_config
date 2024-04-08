@@ -14,6 +14,7 @@
 # games
 			minesweep-rs
 			minetest
+			cmatrix
 		];
 	};
 
