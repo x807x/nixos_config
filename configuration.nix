@@ -288,8 +288,7 @@
 #*/
 
 # ROR
-		rubyPackages_3_2.rails
-		ruby_3_2
+		emacsPackages.rvm
 	];
 
 # Some programs need SUID wrappers, can be configured further or are
