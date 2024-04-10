@@ -83,7 +83,7 @@
 
 # Enable the KDE Plasma Desktop Environment.
 	services.xserver.displayManager.gdm.enable = true;
-	services.xserver.desktopManager.plasma5.enable = true;
+#	services.xserver.desktopManager.plasma5.enable = true;
 
 
 # GNOME desktop intergration
@@ -208,13 +208,14 @@
 		};
 	};
 # $ nix search wget
+	/*
 	environment.plasma5.excludePackages = with pkgs.libsForQt5; [
 		plasma-browser-integration
 			oxygen
 			kwallet
 			kwallet-pam
 			kwalletmanager
-	];
+	];*/
 
 
 	environment.systemPackages = with pkgs; [
@@ -288,7 +289,7 @@
 #*/
 
 # ROR
-		emacsPackages.rvm
+		
 	];
 
 # Some programs need SUID wrappers, can be configured further or are
