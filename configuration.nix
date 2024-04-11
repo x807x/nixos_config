@@ -221,6 +221,7 @@
 	environment.systemPackages = with pkgs; [
 		vieb
 			auto-cpufreq
+			ruby_3_2
 			nano# Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
 			neofetch
 			lightdm-mobile-greeter # touch screen
