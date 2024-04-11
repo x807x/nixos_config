@@ -221,6 +221,7 @@
 	environment.systemPackages = with pkgs; [
 		vieb
 			auto-cpufreq
+			libsForQt5.plasma-systemmonitor
 #			ruby_3_2
 #			rubyPackages_3_2.railties
 #			libyaml
