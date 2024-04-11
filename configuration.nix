@@ -222,6 +222,7 @@
 		vieb
 			auto-cpufreq
 			libsForQt5.plasma-systemmonitor
+			bundix
 #			ruby_3_2
 #			rubyPackages_3_2.railties
 #			libyaml
