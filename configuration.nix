@@ -296,6 +296,8 @@
 		 ms-vscode.hexeditor
 		 ms-vscode-remote.remote-ssh
 		 ms-vscode.cmake-tools
+		 ms-toolsai.jupyter
+		 ms-python.python
 		 esbenp.prettier-vscode
 		 ];
 		 })
