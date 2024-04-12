@@ -112,7 +112,7 @@
 		alsa.support32Bit = true;
 		pulse.enable = true;
 # If you want to use JACK applications, uncomment this
-		jack.enable = true;
+#		jack.enable = true;
 
 # use the example session manager (no others are packaged yet so this is enabled by default,
 # no need to redefine it in your config for now)
@@ -205,23 +205,25 @@
 	environment = {
 		sessionVariables = {
 #LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+		  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+
 		};
 	};
 # $ nix search wget
 	/*
-	environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-		plasma-browser-integration
-			oxygen
-			kwallet
-			kwallet-pam
-			kwalletmanager
-	];*/
+	   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+	   plasma-browser-integration
+	   oxygen
+	   kwallet
+	   kwallet-pam
+	   kwalletmanager
+	   ];*/
 
 
 	environment.systemPackages = with pkgs; [
 		vieb
 			auto-cpufreq
-			libsForQt5.plasma-systemmonitor
+#			libsForQt5.plasma-systemmonitor
 			bundix
 #			ruby_3_2
 #			rubyPackages_3_2.railties
@@ -275,7 +277,13 @@
 		rofi-wayland
 ##
 		(import ./vim.nix)
-		(python310.withPackages(ps: with ps; [ pip discordpy requests python-dotenv beautifulsoup4 ]))
+		(python310.withPackages(ps: with ps; [
+								pip
+								discordpy
+								requests
+								python-dotenv
+								beautifulsoup4
+		]))
 		(vscode-with-extensions.override {
 		 vscode = vscodium;
 		 vscodeExtensions = with vscode-extensions; [
@@ -294,7 +302,7 @@
 #*/
 
 # ROR
-		
+
 	];
 
 # Some programs need SUID wrappers, can be configured further or are
@@ -318,10 +326,10 @@
 	};
 	security.pam.services.swaylock = {};
 	/*
-	security.pam.loginLimits = [
-	{ domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
-	];
-	*/
+	   security.pam.loginLimits = [
+	   { domain = "@users"; item = "rtprio"; type = "-"; value = 1; }
+	   ];
+	 */
 
 	environment.sessionVariables = {
 		WLR_NO_HARDWARE_CURSORS = "1";
