@@ -224,6 +224,7 @@
 		vieb
 			jre8
 			jre8_headless
+			openjdk8-bootstrap
 			javaPackages.openjfx21
 			auto-cpufreq
 #			libsForQt5.plasma-systemmonitor
