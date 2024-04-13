@@ -222,6 +222,8 @@
 
 	environment.systemPackages = with pkgs; [
 		vieb
+			jre8
+			javaPackages.openjfx21
 			auto-cpufreq
 #			libsForQt5.plasma-systemmonitor
 			bundix
