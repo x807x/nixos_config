@@ -206,6 +206,9 @@
 		sessionVariables = {
 #LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 		  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+		  GTK_IM_MODULE = "fcitx";
+		  QT_IM_MODULE = "fcitx";
+		  XMODIFIERS = "@im=fcitx";
 
 		};
 	};
