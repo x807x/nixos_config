@@ -143,6 +143,10 @@
 	};
 
 	hardware.sensor.iio.enable = true;
+# bluetooth
+	hardware.bluetooth.enable = true;
+	hardware.bluetooth.powerOnBoot = true;
+	services.blueman.enable = true;
 # nvidiagpu
 	/*  katago.override = {
 		backend = "cuda";
