@@ -112,7 +112,7 @@
 		alsa.support32Bit = true;
 		pulse.enable = true;
 # If you want to use JACK applications, uncomment this
-#		jack.enable = true;
+		jack.enable = true;
 
 # use the example session manager (no others are packaged yet so this is enabled by default,
 # no need to redefine it in your config for now)
@@ -208,8 +208,7 @@
 # List packages installed in system profile. To search, run:
 	environment = {
 		sessionVariables = {
-#LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
-		  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
+#		  LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
 		  GTK_IM_MODULE = "fcitx";
 		  QT_IM_MODULE = "fcitx";
 		  XMODIFIERS = "@im=fcitx";
