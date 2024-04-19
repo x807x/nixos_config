@@ -229,6 +229,7 @@
 	environment.systemPackages = with pkgs; [
 		vieb
 			openssl
+			pkg-config
 			jre8
 			jre8_headless
 			openjdk8-bootstrap
