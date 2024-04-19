@@ -212,7 +212,7 @@
 		  GTK_IM_MODULE = "fcitx";
 		  QT_IM_MODULE = "fcitx";
 		  XMODIFIERS = "@im=fcitx";
-
+	      PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig:$PKG_CONFIG_PATH";
 		};
 	};
 # $ nix search wget
