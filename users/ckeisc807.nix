@@ -15,6 +15,7 @@
 			minesweep-rs
 			minetest
 			cmatrix
+			libremines
 		];
 	};
 
